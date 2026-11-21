@@ -37,3 +37,6 @@
 // console.log(itemId);
 // console.log(Checklist.getItem(itemId));
 // console.log(Checklist.items);
+
+const todoModal = document.querySelector("#todo-modal");
+todoModal.showModal();

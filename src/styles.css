@@ -6,7 +6,7 @@
     font-display: swap;
 }
 
-* {
+*:not(dialog) {
     padding: 0;
     margin: 0;
 }
@@ -161,3 +161,9 @@ body {
 }
 
 /* TODO: Add TODO Item button hover/click styles */
+
+/* TODO Viewer Modal */
+#todo-modal {
+    width: 50%;
+    height: 50%;
+}
