@@ -10,7 +10,42 @@
 </head>
 
 <body>
-    <h1>Test Page</h1>
+    <div id="main-container">
+        <div id="project-sidebar">
+            <h2>Your Projects:</h2>
+            <div class="divider"></div>
+            <div id="project-list">
+                <button>Project 1</button>
+                <button>Project 2</button>
+                <button id="add-new-project-btn">Add new +</button>
+            </div>
+        </div>
+        <div id="project-view">
+            <h1>Project 1</h1>
+            <div class="action-buttons">
+                <button><img src="assets/icons/delete.svg"></button>
+                <button><img src="assets/icons/edit.svg"></button>
+            </div>
+            <div class="divider"></div>
+            <div id="todo-item-list">
+                <button class="todo-item normal">
+                    <h3>Example Task Normal</h3>
+                    <p>Due: Today</p>
+                </button>
+                <button class="todo-item important">
+                    <h3>Example Task Important</h3>
+                    <p>Due: Today</p>
+                </button>
+                <button class="todo-item critical">
+                    <h3>Example Task Critical</h3>
+                    <p>Due: Today</p>
+                </button>
+                <button id="add-todo-btn" class="todo-item">
+                    <p>Add TODO +</p>
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

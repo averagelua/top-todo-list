@@ -1,0 +1,163 @@
+@font-face {
+    font-family: 'Albert Sans';
+    src: url('./assets/fonts/AlbertSans-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Albert Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#main-container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.divider {
+    background-color: #BEBEBE;
+    height: 2px;
+    width: 80%;
+}
+
+/* Project Sidebar */
+#project-sidebar {
+    background-color: #D9D9D9;
+    /* padding-top: 40px; */
+    padding: 40px 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    box-shadow: 4px 0px 8px rgba(0, 0, 0, 0.25);
+}
+
+#project-sidebar h2 {
+    color: #828282;
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: normal;
+}
+
+/* Project List */
+#project-list {
+    list-style: none;
+    width: 100%;
+
+    display: grid;
+    grid-auto-rows: 60px;
+    gap: 10px;
+}
+
+#project-list button {
+    background-color: #BEBEBE;
+    color: #373737;
+
+    border: none;
+    text-align: start;
+
+    padding-left: 20px;
+    font-size: 1.1rem;
+}
+
+#project-list #add-new-project-btn {
+    background-color: #CCCCCC;
+    text-align: center;
+}
+
+/* TODO: Add Project list button hover/click styles */
+
+/* Project View */
+#project-view {
+    padding: 40px;
+    padding-right: 50px;
+}
+
+#project-view h1 {
+    font-size: 3.75rem;
+    margin-bottom: 10px;
+}
+
+.action-buttons button {
+    width: 40px;
+    aspect-ratio: 1;
+    background: none;
+    border: none;
+}
+
+/* TODO: Add action buttons hover/click styles */
+
+#project-view .divider {
+    width: 98%;
+    margin: 20px auto;
+}
+
+/* Project TODO List */
+#todo-item-list {
+    width: 98%;
+    margin: 0 auto;
+
+    display: grid;
+    grid-auto-rows: 90px;
+    gap: 25px;
+}
+
+.todo-item {
+    background-color: #F0F0F0;
+    border: solid 1px #797979;
+    text-align: start;
+    padding-left: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.todo-item h3 {
+    font-weight: normal;
+    font-size: 1.8rem;
+}
+
+.todo-item p {
+    font-size: 1.2rem;
+}
+
+.normal {
+    order: 2;
+}
+
+.important {
+    background-color: #FFEC9E;
+    order: 1;
+}
+
+.critical {
+    background-color: #FFA3A3;
+}
+
+#add-todo-btn {
+    order: 4;
+    height: 60px;
+    box-shadow: none;
+    background-color: #F8F8F8;
+    text-align: center;
+}
+
+#add-todo-btn p {
+    font-size: 1.6rem;
+}
+
+/* TODO: Add TODO Item button hover/click styles */
