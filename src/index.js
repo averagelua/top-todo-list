@@ -38,5 +38,7 @@
 // console.log(Checklist.getItem(itemId));
 // console.log(Checklist.items);
 
-const todoModal = document.querySelector("#todo-modal");
+const todoModal = document.querySelector("#todo-viewer");
 todoModal.showModal();
+document.querySelector("#delete-confirmation").showModal();
+// todoModal.close();

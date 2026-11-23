@@ -28,6 +28,10 @@ body {
     width: 80%;
 }
 
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
 /* Project Sidebar */
 #project-sidebar {
     background-color: #D9D9D9;
@@ -104,12 +108,18 @@ body {
 
 /* Project TODO List */
 #todo-item-list {
+    list-style: none;
+
     width: 98%;
     margin: 0 auto;
 
     display: grid;
     grid-auto-rows: 90px;
     gap: 25px;
+}
+
+#todo-item-list li {
+    display: contents;
 }
 
 .todo-item {
@@ -135,16 +145,16 @@ body {
     font-size: 1.2rem;
 }
 
-.normal {
+.todo-item.normal {
     order: 2;
 }
 
-.important {
+.todo-item.important {
     background-color: #FFEC9E;
     order: 1;
 }
 
-.critical {
+.todo-item.critical {
     background-color: #FFA3A3;
 }
 
@@ -163,7 +173,202 @@ body {
 /* TODO: Add TODO Item button hover/click styles */
 
 /* TODO Viewer Modal */
-#todo-modal {
+#todo-viewer {
     width: 50%;
-    height: 50%;
+    height: 65%;
+
+    padding: 40px 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+#todo-viewer-close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    aspect-ratio: 1;
+    font-size: 1.5rem;
+    width: 2rem;
+    border-radius: 100vmax;
+    border: 1px solid #797979;
+}
+
+.priority-badge {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    padding: 5px 30px;
+    border-radius: 100vmax;
+    box-sizing: border-box;
+}
+
+.priority-badge.normal {
+    background-color: #EAEAEA;
+    color: #B8B8B8;
+}
+
+.priority-badge.important {
+    background-color: #FFD45C;
+    color: #D36900;
+}
+
+.priority-badge.critical {
+    background-color: #FF7D5C;
+    color: #D31900;
+}
+
+#todo-viewer .divider {
+    width: 95%;
+    margin: 17px auto;
+}
+
+#todo-viewer h1 {
+    font-size: 3rem;
+}
+
+#todo-viewer h2 {
+    margin-top: 15px;
+}
+
+#todo-checklist {
+    list-style: none;
+    display: grid;
+    grid-auto-rows: 35px;
+    gap: 15px;
+}
+
+#todo-checklist div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background-color: #EDEDED;
+    padding-left: 10px;
+}
+
+#todo-checklist p {
+    font-size: 1.2rem;
+    color: #474747;
+}
+
+#todo-checklist .check-button {
+    aspect-ratio: 1;
+    height: 70%;
+    border-radius: 100vmax;
+    border-width: 1px;
+    background-color: #D9D9D9;
+}
+
+#todo-checklist li {
+    display: contents;
+}
+
+/* TODO Editor Modal */
+#todo-editor {
+    width: 50%;
+    height: 65%;
+
+    padding: 40px 20px 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.todo-editor-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#todo-name-field {
+    padding: 10px;
+    font-size: 3rem;
+}
+
+#priority-select {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+
+    padding: 5px 20px;
+    font-size: 1rem;
+    background: none;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+}
+
+#todo-editor .divider {
+    width: 95%;
+    margin: 17px auto;
+}
+
+#todo-editor h2 {
+    margin-top: 15px;
+}
+
+#todo-date-field {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+#todo-description-field {
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
+    field-sizing: content;
+    font-size: 1.2rem;
+}
+
+#todo-checklist input {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+}
+
+.choice-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.choice-buttons button {
+    padding: 10px 40px;
+    border: none;
+    border-radius: 100vmax;
+    font-size: 1.2rem;
+}
+
+.save-button {
+    background-color: #47A6FF;
+    color: white;
+}
+
+/* Delete confirmation */
+#delete-confirmation {
+    padding: 50px;
+}
+
+.delete-confirmation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.delete-confirmation-container h2 {
+    font-size: 2rem;
+}
+
+.delete-button {
+    background-color: #FF8383;
+    color: white;
 }

@@ -27,29 +27,131 @@
                 <button><img src="assets/icons/edit.svg"></button>
             </div>
             <div class="divider"></div>
-            <div id="todo-item-list">
-                <button class="todo-item normal">
-                    <h3>Example Task Normal</h3>
-                    <p>Due: Today</p>
-                </button>
-                <button class="todo-item important">
-                    <h3>Example Task Important</h3>
-                    <p>Due: Today</p>
-                </button>
-                <button class="todo-item critical">
-                    <h3>Example Task Critical</h3>
-                    <p>Due: Today</p>
-                </button>
-                <button id="add-todo-btn" class="todo-item">
-                    <p>Add TODO +</p>
-                </button>
-            </div>
+            <ul id="todo-item-list">
+                <li>
+                    <button class="todo-item normal">
+                        <h3>Example Task Normal</h3>
+                        <p>Due: Today</p>
+                    </button>
+                </li>
+                <li>
+                    <button class="todo-item important">
+                        <h3>Example Task Important</h3>
+                        <p>Due: Today</p>
+                    </button>
+                </li>
+                <li>
+                    <button class="todo-item critical">
+                        <h3>Example Task Critical</h3>
+                        <p>Due: Today</p>
+                    </button>
+                </li>
+                <li>
+                    <button id="add-todo-btn" class="todo-item">
+                        <p>Add TODO +</p>
+                    </button>
+                </li>
+            </ul>
         </div>
     </div>
-    <dialog id="todo-modal">
-        <h1>
-            Example Task 1
-        </h1>
+
+    <!-- Todo viewer -->
+    <dialog id="todo-viewer">
+        <button id="todo-viewer-close-btn" commandfor="todo-viewer" command="close">X</button>
+        <div class="priority-badge important">
+            <p>Important</p>
+        </div>
+        <div class="modal-header">
+            <h1>Example Task 1</h1>
+            <div class="action-buttons">
+                <button><img src="assets/icons/delete.svg"></button>
+                <button><img src="assets/icons/edit.svg"></button>
+            </div>
+        </div>
+        <div class="divider"></div>
+
+        <h2>Due date:</h2>
+        <p id="todo-due-date">Wednesday, Oct. 28, 2026</p>
+
+        <h2>Description:</h2>
+        <p id="todo-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum blanditiis eveniet odio
+            doloribus in animi est quasi corporis, ex consequatur cumque expedita. Fugiat earum minima eos, magnam
+            numquam sapiente esse?
+        </p>
+
+        <h2>Checklist:</h2>
+        <ul id="todo-checklist">
+            <li>
+                <div>
+                    <button class="check-button"></button>
+                    <p>Checklist item 1</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <button class="check-button"></button>
+                    <p>Checklist item 1</p>
+                </div>
+            </li>
+        </ul>
+    </dialog>
+
+    <!-- Todo editor -->
+    <dialog id="todo-editor">
+        <div class="todo-editor-container">
+            <div>
+                <select id="priority-select">
+                    <option value="normal">Normal</option>
+                    <option value="important">Important</option>
+                    <option value="critical">Critical</option>
+                </select>
+
+                <input id="todo-name-field" type="text" placeholder="Enter name...">
+                <div class="divider"></div>
+
+                <h2>Due date:</h2>
+                <input id="todo-date-field" type="date">
+
+                <h2>Description:</h2>
+                <textarea
+                    id="todo-description-field">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum blanditiis eveniet odio doloribus in animi est quasi corporis, ex consequatur cumque expedita. Fugiat earum minima eos, magnam numquam sapiente esse?</textarea>
+
+                <h2>Checklist:</h2>
+                <ul id="todo-checklist">
+                    <li>
+                        <div>
+                            <p>Checklist item 1</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <p>Checklist item 1</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <input id="checklist-item" type="text" placeholder="+ Type new checklist item...">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="choice-buttons">
+                <button class="save-button">Save</button>
+                <button class="cancel-button">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Delete confirmation -->
+    <dialog id="delete-confirmation">
+        <div class="delete-confirmation-container">
+            <h2>Are you sure?</h2>
+            <div class="choice-buttons">
+                <button class="delete-button">Delete</button>
+                <button class="cancel-button">Cancel</button>
+            </div>
+        </div>
     </dialog>
 </body>
 
