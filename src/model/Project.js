@@ -13,7 +13,7 @@ export default class Project {
     static fromJSON(data) {
         const newProject = new Project(data.name, data.id);
 
-        for (const todoItem in data.todolist.items) {
+        for (const [todoItemId, todoItem] of Object.entries(data.todolist.items)) {
             const newTodoItem = new TodoItem(todoItem.title, todoItem.description, new Date(todoItem.dueDate), todoItem.priority);
 
             for (const checklistItem in todoItem.checklist.items) {
@@ -24,7 +24,7 @@ export default class Project {
                 newTodoItem.checklist.addItem(newChecklistItem);
             }
 
-            newProject.todolist.addItem(newTodoItem);
+            newProject.todolist.items.set(todoItemId, newTodoItem);
         }
 
         return newProject;
