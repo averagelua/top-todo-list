@@ -1,3 +1,11 @@
 {
-    "DEFAULT_PROJECT_NAME": "Project 1"
+    "DEFAULT_PROJECT_NAME": "Project 1",
+    "PRIORITY_DISPLAY_ORDER": [
+        "critical",
+        "important",
+        "normal"
+    ],
+    "SUPPORTED_LOCALES": [
+        "en-US"
+    ]
 }
