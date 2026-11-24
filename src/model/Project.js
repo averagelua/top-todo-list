@@ -1,5 +1,6 @@
 import ItemList from "./ItemList.js";
 import TodoItem from "./TodoItem.js";
+import ChecklistItem from "./ChecklistItem.js";
 
 export default class Project {
     constructor(name, id) {
@@ -13,7 +14,16 @@ export default class Project {
         const newProject = new Project(data.name, data.id);
 
         for (const todoItem in data.todolist.items) {
-            const newTodoItem = Object.assign(new TodoItem(), todoItem);
+            const newTodoItem = new TodoItem(todoItem.title, todoItem.description, new Date(todoItem.dueDate), todoItem.priority);
+
+            for (const checklistItem in todoItem.checklist.items) {
+                const newChecklistItem = new ChecklistItem(checklistItem.description);
+                if (checklistItem.completed) {
+                    newChecklistItem.toggle();
+                }
+                newTodoItem.checklist.addItem(newChecklistItem);
+            }
+
             newProject.todolist.addItem(newTodoItem);
         }
 
