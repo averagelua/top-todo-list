@@ -5,7 +5,8 @@ export let projects = [];
 export function loadProjects() {
     const savedProjects = localStorage.getItem("projects")
     if (savedProjects) {
-        projects = JSON.parse(savedProjects);
+        projects = JSON.parse(savedProjects)
+            .map(projectData => Project.fromJSON(projectData));
     }
 }
 
