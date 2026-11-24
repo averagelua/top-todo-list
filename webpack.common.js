@@ -1,5 +1,7 @@
 import path from "node:path";
+import webpack from "webpack";
 import { fileURLToPath } from 'node:url';
+import config from "./src/config.json" with { type: "json" };
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -12,6 +14,17 @@ export default {
         path: path.resolve(__dirname, "dist"),
         clean: true,
     },
+    resolve: {
+        alias: {
+            "date-fns-locale": path.dirname(import.meta.resolve("date-fns/package.json")),
+        },
+    },
+    plugins: [
+        new webpack.ContextReplacementPlugin(
+            /date-fns[/\\]locale/,
+            new RegExp(`(${config.SUPPORTED_LOCALES.join("|")})\.js$`),
+        ),
+    ],
     module: {
         rules: [
             {
